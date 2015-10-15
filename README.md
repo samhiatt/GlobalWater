@@ -17,4 +17,19 @@ http://www.naturalearthdata.com/downloads/50m-physical-vectors/
 
 ## Example queries
 ##### Find water within 10km of 122.4W, 37.59N:  
-` db.water.find({geometry:{$near:{$geometry: {type : "Point" ,coordinates: [  -122.4, 37.59  ]},$maxDistance: 10000}}},{properties:1}) `
+``` 
+db.water.find(  
+    {  
+        geometry:{  
+            $near:{  
+                $geometry: {type : "Point" ,coordinates: [  -122.4, 37.59  ]},  
+                $maxDistance: 10000  
+            }  
+        }  
+    },  
+    {  
+        properties:1  
+    }
+); 
+```
+        
